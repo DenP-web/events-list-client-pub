@@ -21,10 +21,11 @@ const Participants = () => {
   const events = useSelector(({events}) => events)
   const title = (events.list.find(el => el._id === id))?.title
 
-  useEffect(() => {
-    dispatch(getParticipants(id))
-  }, [id])
-
+  // useEffect(() => {
+  //   dispatch(getParticipants(id))
+  // }, [id])
+  console.log(isLoading)
+  
   return (
     <div className="wrapper">
       <header>

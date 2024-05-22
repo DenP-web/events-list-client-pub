@@ -38,13 +38,13 @@ export const searchParticipants = createAsyncThunk(
 
 export const registerParticipants = createAsyncThunk(
   "events/registerParticipants",
-  async ({navigate, ...payload}, thunkAPI) => {
+  async ({ navigate, ...payload }, thunkAPI) => {
     try {
       const { data } = await $host.post(`/participant/${payload.id}`, {
         ...payload.values,
       });
       alert("You have successfully registered");
-      navigate(`${PARTICIPANTS_URL}/${payload.id}`)
+      navigate(`${PARTICIPANTS_URL}/${payload.id}`);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data);
@@ -65,21 +65,20 @@ const participantsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getParticipants.pending, (state, { payload }) => {
-        state.isLoading = false;
+        state.isLoading = true;
         state.list = [];
-        state.title = "";
-      })
-      .addCase(getParticipants.rejected, (state, { payload }) => {
-        state.isLoading = false;
-        state.list = [];
-        state.title = "";
-        state.totalCount = 0;
       })
       .addCase(getParticipants.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.list = payload.data.participants;
         state.title = payload.data.title;
         state.totalCount = payload.data.totalCount;
+      })
+      .addCase(getParticipants.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.list = [];
+        state.title = "";
+        state.totalCount = 0;
       })
 
       .addCase(registerParticipants.fulfilled, (state, { payload }) => {
