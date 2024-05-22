@@ -1,0 +1,61 @@
+.register {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.group {
+  position: relative;
+  margin-bottom: 16px;
+  display: flex;
+}
+
+.msg {
+  position: absolute;
+  color: red;
+  font-size: 12px;
+  bottom: -14px;
+  left: 0;
+}
+
+.subtitle {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+
+.title {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+
+.label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.radio {
+  margin-right: 8px;
+}
+
+span {
+  font-weight: 400;
+  transition: font-weight .3s linear, color .3s linear, transform .3s linear;
+}
+
+.radio:checked+span {
+  color: #007bff;
+  transform: scale(1.1);
+}
+.radio:hover+span {
+  transform: scale(1.1);
+}

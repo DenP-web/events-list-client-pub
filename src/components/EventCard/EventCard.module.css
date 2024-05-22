@@ -1,0 +1,33 @@
+.card {
+  padding: 10px;
+  border: 1px solid var(--c-black);
+}
+
+.title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.text {
+  margin-bottom: 20px;
+}
+.text p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.block {
+  display: block;
+  margin-bottom: 10px;
+}
+.bold {
+  font-weight: 500;
+}
+
+.box {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  color: var(--c-blue);
+  font-weight: 500;
+}

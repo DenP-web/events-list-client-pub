@@ -1,0 +1,19 @@
+.btn {
+  cursor: pointer;
+  padding: 15px 10px;
+  color: var(--c-black);
+  background-color: var(--c-white);
+  font-weight: 500;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: background-color .3s linear, color .2s linear, border-color .3s linear;
+}
+
+.btn.active {
+  color: var(--c-gray);
+  background-color: var(--c-black);
+}
+
+.btn:hover {
+  border: 1px solid var(--c-black);
+}
